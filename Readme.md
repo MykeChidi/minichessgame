@@ -1,4 +1,4 @@
-# Chess Game with AI
+# Chess Game with Q-Learning AI
 
 A mini chess game built with Python and Pygame, featuring an AI opponent that learns through Q-learning and uses minimax algorithms for strategic play.
 
@@ -7,6 +7,7 @@ A mini chess game built with Python and Pygame, featuring an AI opponent that le
 ### Game Modes
 - **Human vs AI**: Play against an intelligent AI opponent
 - **Human vs Human**: Two-player local chess game
+- **Puzzles**: Force checkmates with a specified number of moves
 - **AI Training**: Train the AI to improve its performance
 - **Color Selection**: Choose to play as White or Black against AI
 
@@ -32,7 +33,8 @@ A mini chess game built with Python and Pygame, featuring an AI opponent that le
 2. **Play as White**: Start game as White pieces
 3. **Play as Black**: Start game as Black pieces  
 4. **Two Players**: Local multiplayer mode
-5. **Exit**: Quit the application
+5. **Puzzles**: Solve puzzles
+6. **Exit**: Quit the application
 
 ### Game Controls
 - **Mouse**: Click to select pieces and make moves
@@ -84,7 +86,7 @@ The AI uses Q-learning to improve its chess playing:
 - **Learning Rate (α)**: 0.1
 - **Discount Factor (γ)**: 0.9
 - **Exploration Rate (ε)**: Starts at 0.3, decays to 0.01
-- **Q-table Size Limit**: 40,000 positions
+- **Q-table Size Limit**: 100,000 positions
 
 ### Performance Tips
 - Train for 100+ games for noticeable improvement

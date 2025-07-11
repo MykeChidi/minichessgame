@@ -7,6 +7,7 @@ from typing import Tuple, Optional
 from enum import Enum
 import random
 from chess_ai import ChessAI
+from puzzles import puzzles_list
 
 # Initialize Pygame
 pygame.init()
@@ -31,12 +32,15 @@ BUTTON_HOVER = (100, 149, 237)
 TEXT_COLOR = (50, 50, 50)
 BG_COLOR = (245, 245, 245)
 
+
 class GameState(Enum):
     MENU = "menu"
     HUMAN_VS_AI = "human_vs_ai"
     TRAINING = "training"
     HUMAN_VS_HUMAN = "human_vs_human"
+    PUZZLE = "puzzle"
     PAUSED = "paused"
+
 
 class Controller:
     """Game action controls and logic"""
@@ -54,9 +58,26 @@ class Controller:
         self.ai_thinking = False
         self.training_progress = {"games": 0, "total": 0, "wins": 0, "draws": 0, "losses": 0}
 
+        self.current_puzzle = None
+        self.puzzle_moves_made = 0
+        self.puzzle_failed = False
+
+
     def undo_move(self):
         """Undo the last move if possible."""
-        if self.game_state == GameState.HUMAN_VS_AI:
+        if self.game_state == GameState.PUZZLE and not self.puzzle_failed:
+            if not self.ai.board.is_game_over() and len(self.ai.board.move_stack) > 0:
+                # Undo the player moves, then the AI. 
+                undone_move = self.ai.undo_move()
+                self.puzzle_moves_made -= 1
+                if undone_move:
+                    self.last_move = self.ai.board.peek() if len(self.ai.board.move_stack) > 0 else None
+                    self.selected_square = None
+                    self.legal_moves = []
+                    self.show_message("Move undone", 1500)
+            return
+        
+        elif self.game_state == GameState.HUMAN_VS_AI:
             if not self.ai.board.is_game_over():
                 undone_move = self.ai.undo_move()
                 if undone_move:
@@ -118,6 +139,54 @@ class Controller:
         pygame.quit()
         sys.exit()
 
+    def _get_random_puzzle(self):
+        """Selects a random puzzle and determines the player's color from the FEN."""
+        puzzle = random.choice(puzzles_list)
+        board = chess.Board(puzzle["fen"])
+        puzzle["player_color"] = board.turn
+        return puzzle
+    
+    def start_puzzle_game(self):
+        """Initializes the puzzle game mode by loading the first puzzle."""
+        self.game_state = GameState.PUZZLE
+        self._load_random_puzzle()
+        self.show_message("Find the winning move!", 3000)
+
+    def _load_random_puzzle(self):
+        """Loads a new random puzzle and resets the board state."""
+        self.current_puzzle = self._get_random_puzzle()
+        self.ai.board.set_fen(self.current_puzzle["fen"])
+        self.player_color = self.current_puzzle["player_color"]
+        
+        # Reset puzzle state
+        self.puzzle_moves_made = 0
+        self.selected_square = None
+        self.legal_moves = []
+        self.last_move = None
+        self.ai_thinking = False
+        
+        # Ensure AI moves if it's its turn first 
+        if self.ai.board.turn != self.player_color:
+            self.make_ai_move()
+
+    def reset_puzzle(self):
+        """Resets the current puzzle to its initial state."""
+        if not self.current_puzzle:
+            return
+
+        # Reset the board to the puzzle's starting FEN
+        self.ai.board.set_fen(self.current_puzzle["fen"])
+        self.player_color = self.current_puzzle["player_color"]
+
+        # Reset all puzzle-specific game state variables
+        self.puzzle_moves_made = 0
+        self.selected_square = None
+        self.legal_moves = []
+        self.last_move = None
+        self.ai_thinking = False
+        
+        self.show_message("Puzzle reset.", 2000)
+
     def safe_operation(self, operation, error_message="Operation failed"):
         """Safely execute an operation with error handling."""
         try:
@@ -143,9 +212,11 @@ class Controller:
             try:
                 with self.ai.lock:
                     if self.game_state == GameState.HUMAN_VS_AI:
-                        # Human vs AI - use Q-learning
+                        # Human vs AI 
+                        move = self.ai.get_move(self.ai.board, use_exploration=True)
+                    elif self.game_state == GameState.PUZZLE:
                         move = self.ai.get_move(self.ai.board, use_exploration=False)
-                
+                time.sleep(0.5) 
                 self.ai.board.push(move)
                 self.ai.move_history.append(move)
                 self.last_move = move
@@ -188,10 +259,11 @@ class Controller:
     def validate_game_state_transition(self, new_state):
         """Validate if state transition is allowed."""
         valid_transitions = {
-            GameState.MENU: [GameState.TRAINING, GameState.HUMAN_VS_AI,GameState.HUMAN_VS_HUMAN],
+            GameState.MENU: [GameState.TRAINING, GameState.HUMAN_VS_AI,GameState.HUMAN_VS_HUMAN,GameState.PUZZLE],
             GameState.TRAINING: [GameState.MENU],
             GameState.HUMAN_VS_AI: [GameState.MENU, GameState.PAUSED],
             GameState.HUMAN_VS_HUMAN: [GameState.MENU, GameState.PAUSED],
+            GameState.PUZZLE:[GameState.MENU],
             GameState.PAUSED: [GameState.HUMAN_VS_AI, GameState.HUMAN_VS_HUMAN, GameState.MENU]
         }
         
@@ -286,6 +358,45 @@ class Controller:
     def handle_square_click(self, square: int):
         """Handle clicking on a chess square."""
         if not (0 <= square <= 63):
+            return
+        
+        # Handle puzzle mode
+        if self.game_state == GameState.PUZZLE:
+            if self.ai_thinking or self.ai.board.is_game_over():
+                return
+            
+            if self.ai.board.turn != self.player_color:
+                return
+
+            piece = self.ai.board.piece_at(square)
+            if piece and piece.color == self.player_color:
+                self.selected_square = square
+                self.legal_moves = [m for m in self.ai.board.legal_moves if m.from_square == square]
+            elif self.selected_square is not None:
+                move = next((m for m in self.legal_moves if m.to_square == square), None)
+                if move:
+                    move = self._handle_pawn_promotion(move, square)
+                    if not self._is_valid_move(move):
+                        self.show_message("Invalid move!", 2000)
+                        return
+
+                    self.ai.board.push(move)
+                    self.last_move = move
+                    self.puzzle_moves_made += 1
+                    self.selected_square = None
+                    self.legal_moves = []
+
+                    # Check puzzle outcome
+                    if self.ai.board.is_checkmate():
+                        self.show_message("Puzzle Solved! Well done!", 5000)
+                    elif self.puzzle_moves_made >= self.current_puzzle["moves_to_mate"]:
+                        self.show_message(f"Puzzle Failed. Out of moves.", 5000)
+                        self.puzzle_failed = True
+                    elif not self.ai.board.is_game_over():
+                        self.make_ai_move()
+                else:
+                    self.selected_square = None
+                    self.legal_moves = []
             return
         
          # Handle Human vs Human mode
@@ -696,6 +807,23 @@ class RenderUI:
             self.screen.blit(text, (sidebar_x + 10, y_offset))
             y_offset += 40
         
+        elif self.game_state == GameState.PUZZLE:
+            text = self.font.render("Puzzle Mode", True, TEXT_COLOR)
+            self.screen.blit(text, (sidebar_x + 10, y_offset))
+            y_offset += 30
+
+            if self.controller.current_puzzle:
+                mate_in = self.controller.current_puzzle['moves_to_mate']
+                moves_made = self.controller.puzzle_moves_made
+                
+                text = self.font.render(f"Objective: Checkmate in {mate_in} move(s)", True, TEXT_COLOR)
+                self.screen.blit(text, (sidebar_x + 10, y_offset))
+                y_offset += 25
+
+                text = self.font.render(f"Moves: {moves_made} / {mate_in}", True, TEXT_COLOR)
+                self.screen.blit(text, (sidebar_x + 10, y_offset))
+                y_offset += 40
+        
         elif self.game_state == GameState.TRAINING:
             text = self.font.render("Training in Progress", True, TEXT_COLOR)
             self.screen.blit(text, (sidebar_x + 10, y_offset))
@@ -763,6 +891,14 @@ class RenderUI:
                 ("New Game", self.controller.reset_game),
                 ("Return to Menu", self.controller.return_to_menu),
             ]
+        
+        elif self.game_state == GameState.PUZZLE:
+             buttons = [
+                ("Undo", self.controller.undo_move),
+                ("Next Puzzle", self.controller._load_random_puzzle),
+                ("Reset Puzzle", self.controller.reset_puzzle),
+                ("Return to Menu", self.controller.return_to_menu),
+            ]
 
         elif self.game_state == GameState.TRAINING:
             buttons = [
@@ -804,6 +940,7 @@ class RenderUI:
             ("Play as White", lambda: self.controller.start_human_game(chess.WHITE)),
             ("Play as Black", lambda: self.controller.start_human_game(chess.BLACK)),
             ("Two Players", self.controller.start_human_vs_human),
+            ("Puzzles", self.controller.start_puzzle_game),
             ("Exit", self.controller.quit_game)
             ]
 
@@ -868,7 +1005,8 @@ class Handler:
                 pos = pygame.mouse.get_pos()
                 
                 # Check if clicking on board
-                if pos[0] < BOARD_SIZE and self.controller.game_state in [GameState.HUMAN_VS_AI, GameState.HUMAN_VS_HUMAN]:
+                if pos[0] < BOARD_SIZE and self.controller.game_state in [GameState.HUMAN_VS_AI, 
+                                                                          GameState.HUMAN_VS_HUMAN,GameState.PUZZLE]:
                     square = self.renderer.pos_to_square(pos)
                     if square is not None:
                         self.controller.handle_square_click(square)
@@ -886,13 +1024,17 @@ class Handler:
                 else:
                     self.controller.quit_game()
             
-            elif event.key == pygame.K_r and self.game_state in [GameState.HUMAN_VS_AI, GameState.HUMAN_VS_HUMAN]:
+            elif event.key == pygame.K_r and self.game_state in [GameState.HUMAN_VS_AI,
+                                                                 GameState.HUMAN_VS_HUMAN, GameState.PUZZLE]:
                 # Reset game
                 if self.game_state == GameState.HUMAN_VS_AI:
                     self.controller.start_human_game(self.renderer.player_color)
                 elif self.game_state == GameState.HUMAN_VS_HUMAN:
                     self.controller.start_human_vs_human()
-                
+                elif self.game_state == GameState.PUZZLE:
+                    self.controller.start_puzzle_game()
+
+
 class ManageUI:
     """Game UI event manager"""
     def __init__(self):
@@ -916,6 +1058,7 @@ class ManageUI:
             if self.message_timer <= 0:
                 self.message = ""
                 self.message_timer = 0
+
 
 class ChessGameApp:
     """Main entry into application"""

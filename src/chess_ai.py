@@ -27,8 +27,8 @@ class ChessAI:
         self.epsilon = 0.3  # Exploration rate
         self.epsilon_min = 0.01
         self.epsilon_decay = 0.995
-        self.max_q_table_size = 40000 
-        self.q_table_cleanup_threshold = 70000
+        self.max_q_table_size = 100000 
+        self.q_table_cleanup_threshold = 150000
         self.experience_buffer = []
         self.buffer_size = 1000
         
