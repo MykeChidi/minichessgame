@@ -448,7 +448,8 @@ class Controller:
                     self.legal_moves = []
             
             return  
-
+        
+        # Handle Human vs AI mode
         if self.game_state != GameState.HUMAN_VS_AI or self.ai_thinking:
             return
         
@@ -864,15 +865,8 @@ class RenderUI:
         y_offset = max(y_offset, WINDOW_HEIGHT - 200)
         
         buttons = []
-        if self.game_state == GameState.MENU:
-            buttons = [
-                ("Train AI", self.controller.start_training),
-                ("Play as white ", lambda: self.controller.start_human_game(chess.WHITE)),
-                ("Play as black", lambda: self.controller.start_human_game(chess.BLACK)),
-                ("Two Players", self.controller.start_human_vs_human),
-            ]
 
-        elif self.game_state == GameState.PAUSED:
+        if self.game_state == GameState.PAUSED:
             buttons = [
                 ("Resume Game", lambda: self.controller.set_game_state(GameState.HUMAN_VS_AI)),
                 ("New Game", self.controller.reset_game),
@@ -1041,10 +1035,7 @@ class ManageUI:
         self.message = ""
         self.message_timer = 0
         self.controller = None
-        self.input_dialog_active = False
-        self.input_text = "" 
-        self.input_cursor = 0
-
+        
     def show_message(self, message: str, duration: int = 3000):
         """Show a temporary message."""
         self.message = message
