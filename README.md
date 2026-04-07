@@ -69,7 +69,7 @@ Place the Stockfish executable in one of these locations:
 
 ### Running the Game
 ```bash
-python chess_game.py
+python src/chess_game.py
 ```
 
 ## AI Training

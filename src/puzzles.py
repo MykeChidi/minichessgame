@@ -54,9 +54,12 @@ puzzles_list = [
     {"fen": "r6k/n5pp/8/8/8/8/6N1/7K w - - 0 1", "moves_to_mate": 1},
     {"fen": "6k1/5ppp/8/8/8/8/5RB1/7K w - - 0 1", "moves_to_mate": 1},
     {"fen": "2k5/2p5/2K5/8/8/8/8/Q7 w - - 0 1", "moves_to_mate": 1},
-     {"fen": "6k1/5ppp/8/8/8/8/8/R6K w - - 0 1", "moves_to_mate": 1},
+    {"fen": "6k1/5ppp/8/8/8/8/8/R6K w - - 0 1", "moves_to_mate": 1},
     {"fen": "r5k1/5ppp/8/8/8/8/8/4R2K w - - 0 1", "moves_to_mate": 1},
-    {"fen": "2k5/1pp5/8/8/8/8/8/R6K w - - 0 1", "moves_to_mate": 1,},
+    {
+        "fen": "2k5/1pp5/8/8/8/8/8/R6K w - - 0 1",
+        "moves_to_mate": 1,
+    },
     {"fen": "k7/pp6/8/8/8/8/8/Q6K w - - 0 1", "moves_to_mate": 1},
     {"fen": "7k/6pp/8/8/8/8/8/Q6K w - - 0 1", "moves_to_mate": 1},
     {"fen": "6k1/5ppp/8/8/8/8/6N1/7K w - - 0 1", "moves_to_mate": 1},
@@ -83,14 +86,17 @@ puzzles_list = [
     {"fen": "2krr3/ppp2ppp/2p5/8/8/8/PPP2PPP/R1B2K1R w - - 0 1", "moves_to_mate": 1},
     {"fen": "6k1/p4ppp/1p6/8/8/P4P2/1P3qPP/3Q3K w - - 0 1", "moves_to_mate": 1},
     {"fen": "5rk1/1p3ppp/p7/3N4/8/8/PPP3PP/2K5 w - - 0 1", "moves_to_mate": 1},
-    {"fen": "r1b2rk1/pp1p1ppp/2n5/q7/2B1Q3/8/PP3PPP/R1B2RK1 w - - 0 1", "moves_to_mate": 1},
+    {
+        "fen": "r1b2rk1/pp1p1ppp/2n5/q7/2B1Q3/8/PP3PPP/R1B2RK1 w - - 0 1",
+        "moves_to_mate": 1,
+    },
     {"fen": "r4rk1/pbp2ppp/1p6/8/2B5/1Q6/PP3PPP/3R2K1 w - - 0 1", "moves_to_mate": 1},
     {"fen": "3r1rk1/pppq1ppp/8/8/3B4/8/PPP2PPP/R2Q1RK1 w - - 0 1", "moves_to_mate": 1},
-    {"fen": "2kr3r/ppp2ppp/2p5/8/4P3/P1N5/1PP2PPP/R1B2K1R w - - 0 1", "moves_to_mate": 1},
-
-
+    {
+        "fen": "2kr3r/ppp2ppp/2p5/8/4P3/P1N5/1PP2PPP/R1B2K1R w - - 0 1",
+        "moves_to_mate": 1,
+    },
     # MATE IN 2
-    
     {"fen": "6k1/6pp/8/8/8/8/6PP/Q4R1K w - - 0 1", "moves_to_mate": 2},
     {"fen": "6k1/5ppp/8/8/8/8/5PPP/5BK1 w - - 0 1", "moves_to_mate": 2},
     {"fen": "6k1/4pppp/8/8/8/8/4PPPP/6K1 w - - 0 1", "moves_to_mate": 2},
@@ -128,42 +134,128 @@ puzzles_list = [
     {"fen": "6k1/5ppp/8/2B5/8/8/5PPP/6K1 w - - 0 1", "moves_to_mate": 2},
     {"fen": "k7/1p6/pP6/P7/8/8/8/7K w - - 0 1", "moves_to_mate": 2},
     {"fen": "2r5/3k4/8/8/8/8/4R3/K7 w - - 0 1", "moves_to_mate": 2},
-    {"fen": "rn1qkbnr/pb1ppppp/1p6/8/3pP3/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 0 1", "moves_to_mate": 2},
-    {"fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 1", "moves_to_mate": 2},
-    {"fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 1", "moves_to_mate": 2},
-    {"fen": "5rk1/pp2rp2/2p3p1/3pNb1p/3PqP2/2R1P1QP/P5P1/2R3K1 w - - 0 25", "moves_to_mate": 2},
-    {"fen": "r1b1r1k1/1pq1bppp/p1n1p3/3n4/3N4/2N1B3/PPPQBPPP/3R1RK1 w - - 2 13", "moves_to_mate": 2},
-    {"fen": "3r1rk1/pp3ppp/1qb1p3/4P3/1P1n1P2/P1N5/4B1PP/R2Q1R1K w - - 1 18", "moves_to_mate": 2},
-    {"fen": "rnb2rk1/pp3ppp/1q2p3/2bp4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 2 11", "moves_to_mate": 2},
-    {"fen": "2r2rk1/1bqnbppp/p3p3/1p1n4/3N4/P1N1B3/1PPQBPPP/3R1RK1 w - - 4 15", "moves_to_mate": 2},
-    {"fen": "3rr1k1/1pq2ppp/p1nbp3/3n4/3N4/2N1B3/PPPQBPPP/3R1RK1 w - - 2 15", "moves_to_mate": 2},
+    {
+        "fen": "rn1qkbnr/pb1ppppp/1p6/8/3pP3/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 0 1",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 1",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/3NP3/8/PPP2PPP/RNBQKB1R w KQkq - 0 1",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "5rk1/pp2rp2/2p3p1/3pNb1p/3PqP2/2R1P1QP/P5P1/2R3K1 w - - 0 25",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "r1b1r1k1/1pq1bppp/p1n1p3/3n4/3N4/2N1B3/PPPQBPPP/3R1RK1 w - - 2 13",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "3r1rk1/pp3ppp/1qb1p3/4P3/1P1n1P2/P1N5/4B1PP/R2Q1R1K w - - 1 18",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "rnb2rk1/pp3ppp/1q2p3/2bp4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 2 11",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "2r2rk1/1bqnbppp/p3p3/1p1n4/3N4/P1N1B3/1PPQBPPP/3R1RK1 w - - 4 15",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "3rr1k1/1pq2ppp/p1nbp3/3n4/3N4/2N1B3/PPPQBPPP/3R1RK1 w - - 2 15",
+        "moves_to_mate": 2,
+    },
     {"fen": "6k1/5p2/p1p4p/1p1r4/3b4/1P3R2/P5PP/4B2K w - - 0 31", "moves_to_mate": 2},
-    {"fen": "2rr2k1/p4ppp/1pn1p3/2b5/8/P1N1PN2/1P3PPP/2RR2K1 w - - 2 18", "moves_to_mate": 2},
-    {"fen": "r2q1rk1/p1p2ppp/1pn1p3/3n4/3P4/P1N1PN2/1P3PPP/2RQ1RK1 w - - 1 13", "moves_to_mate": 2},
-    {"fen": "2r2rk1/p4ppp/1qn1p3/2bp4/8/P1N1PN2/1P3PPP/2RQ1RK1 w - - 1 16", "moves_to_mate": 2},
-    {"fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 1", "moves_to_mate": 2},
-    {"fen": "r2qkb1r/pp1n1ppp/2p1pn2/5b2/3P4/2N2N2/PPP1BPPP/R1BQ1RK1 w kq - 0 1", "moves_to_mate": 2},
-    {"fen": "r1b1kb1r/pp3ppp/1qn1pn2/2pp4/3P1B2/2P1PN2/PP1N1PPP/R2QKB1R w KQkq - 0 1", "moves_to_mate": 2},
-    {"fen": "5rk1/pp2rp2/2p3p1/3pNb1p/3PqP2/2R1P1QP/P5P1/2R3K1 w - - 0 25", "moves_to_mate": 2},
+    {
+        "fen": "2rr2k1/p4ppp/1pn1p3/2b5/8/P1N1PN2/1P3PPP/2RR2K1 w - - 2 18",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "r2q1rk1/p1p2ppp/1pn1p3/3n4/3P4/P1N1PN2/1P3PPP/2RQ1RK1 w - - 1 13",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "2r2rk1/p4ppp/1qn1p3/2bp4/8/P1N1PN2/1P3PPP/2RQ1RK1 w - - 1 16",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 1",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "r2qkb1r/pp1n1ppp/2p1pn2/5b2/3P4/2N2N2/PPP1BPPP/R1BQ1RK1 w kq - 0 1",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "r1b1kb1r/pp3ppp/1qn1pn2/2pp4/3P1B2/2P1PN2/PP1N1PPP/R2QKB1R w KQkq - 0 1",
+        "moves_to_mate": 2,
+    },
+    {
+        "fen": "5rk1/pp2rp2/2p3p1/3pNb1p/3PqP2/2R1P1QP/P5P1/2R3K1 w - - 0 25",
+        "moves_to_mate": 2,
+    },
     {"fen": "r3k2r/ppp2ppp/8/8/8/8/PPP2PPP/R3QRK1 w kq - 0 1", "moves_to_mate": 2},
-
     # MATE IN 3
-    {"fen": "r1b3k1/pp3p1p/3p1np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 2 19", "moves_to_mate": 3},
-    {"fen": "2r3k1/p4p1p/1p3np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 0 22", "moves_to_mate": 3},
-    {"fen": "r4rk1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 17", "moves_to_mate": 3},
-    {"fen": "3rr1k1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 19", "moves_to_mate": 3},
-    {"fen": "r2q1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 16", "moves_to_mate": 3},
-    {"fen": "3r1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 18", "moves_to_mate": 3},
-    {"fen": "r4rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 17", "moves_to_mate": 3},
-    {"fen": "2kr3r/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 16", "moves_to_mate": 3},
-    {"fen": "2krr3/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 17", "moves_to_mate": 3},
-    {"fen": "2kr3r/pp1b1p1p/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/R3R1K1 w - - 0 16", "moves_to_mate": 3},
-    {"fen": "r3k2r/ppp2ppp/2n5/3p4/3P4/2N5/PPP2PPP/R2QK2R w KQkq - 0 1", "moves_to_mate": 3},
+    {
+        "fen": "r1b3k1/pp3p1p/3p1np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 2 19",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "2r3k1/p4p1p/1p3np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 0 22",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r4rk1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 17",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "3rr1k1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 19",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r2q1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 16",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "3r1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 18",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r4rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 17",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "2kr3r/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 16",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "2krr3/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 17",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "2kr3r/pp1b1p1p/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/R3R1K1 w - - 0 16",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r3k2r/ppp2ppp/2n5/3p4/3P4/2N5/PPP2PPP/R2QK2R w KQkq - 0 1",
+        "moves_to_mate": 3,
+    },
     {"fen": "6k1/5ppp/8/8/8/8/5PPP/R2Q3K w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r3k2r/ppp2ppp/2n5/3p4/8/2N5/PPP2PPP/R3K2R w KQkq - 0 1", "moves_to_mate": 3},
+    {
+        "fen": "r3k2r/ppp2ppp/2n5/3p4/8/2N5/PPP2PPP/R3K2R w KQkq - 0 1",
+        "moves_to_mate": 3,
+    },
     {"fen": "r3k2r/ppp2ppp/8/3p4/8/8/PPP2PPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 3},
     {"fen": "6k1/5Ppp/8/8/8/8/5PPP/6K1 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r3k2r/ppp2ppp/2n5/3p4/8/8/PPP1BPPP/R3K2R w KQkq - 0 1", "moves_to_mate": 3},
+    {
+        "fen": "r3k2r/ppp2ppp/2n5/3p4/8/8/PPP1BPPP/R3K2R w KQkq - 0 1",
+        "moves_to_mate": 3,
+    },
     {"fen": "6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1", "moves_to_mate": 3},
     {"fen": "r3k2r/ppp2ppp/8/3p4/8/8/PPP2PPP/R3KB1R w KQkq - 0 1", "moves_to_mate": 3},
     {"fen": "6k1/5ppp/8/8/8/8/5PPP/R4K2 w - - 0 1", "moves_to_mate": 3},
@@ -175,48 +267,131 @@ puzzles_list = [
     {"fen": "r5k1/5ppp/8/8/8/8/6N1/5K2 w - - 0 1", "moves_to_mate": 3},
     {"fen": "6k1/5ppp/8/8/8/6B1/5PPP/4RK2 w - - 0 1", "moves_to_mate": 3},
     {"fen": "r5k1/5ppp/8/8/8/8/5PPP/3QK3 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r1b3k1/pp3p1p/3p1np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 2 19", "moves_to_mate": 3},
-    {"fen": "2r3k1/p4p1p/1p3np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 0 22", "moves_to_mate": 3},
+    {
+        "fen": "r1b3k1/pp3p1p/3p1np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 2 19",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "2r3k1/p4p1p/1p3np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 0 22",
+        "moves_to_mate": 3,
+    },
     {"fen": "5rk1/6pp/8/8/8/8/6PP/R5QK w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r4rk1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 17", "moves_to_mate": 3},
-    {"fen": "3rr1k1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 19", "moves_to_mate": 3},
+    {
+        "fen": "r4rk1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 17",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "3rr1k1/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 19",
+        "moves_to_mate": 3,
+    },
     {"fen": "6k1/5pp1/6p1/8/8/8/5PPP/Q6K w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r2q1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 16", "moves_to_mate": 3},
+    {
+        "fen": "r2q1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 16",
+        "moves_to_mate": 3,
+    },
     {"fen": "6k1/5pp1/6p1/8/8/6N1/5PPP/7K w - - 0 1", "moves_to_mate": 3},
     {"fen": "r6k/6pp/8/8/8/6N1/6PP/7K w - - 0 1", "moves_to_mate": 3},
-    {"fen": "3r1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 18", "moves_to_mate": 3},
+    {
+        "fen": "3r1rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1Q1R1K1 w - - 0 18",
+        "moves_to_mate": 3,
+    },
     {"fen": "6k1/5pp1/6p1/8/8/5B2/5PPP/7K w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r4rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 17", "moves_to_mate": 3},
+    {
+        "fen": "r4rk1/1p1b1p1p/p2p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 17",
+        "moves_to_mate": 3,
+    },
     {"fen": "7k/6pp/8/8/8/8/6PP/R5RK w - - 0 1", "moves_to_mate": 3},
     {"fen": "6k1/5P1p/8/8/8/8/6PP/6RK w - - 0 1", "moves_to_mate": 3},
-    {"fen": "2kr3r/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 16", "moves_to_mate": 3},
-    {"fen": "r4rk1/pp3ppp/2p5/q7/3P4/2n2Q2/P1P2PPP/R1B1R1K1 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "2r3k1/p4p1p/1p3np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 0 1", "moves_to_mate": 3},
+    {
+        "fen": "2kr3r/pp1b1p1p/1q1p1np1/2pP4/2B5/2P5/P4PPP/R1B1R1K1 w - - 0 16",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r4rk1/pp3ppp/2p5/q7/3P4/2n2Q2/P1P2PPP/R1B1R1K1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "2r3k1/p4p1p/1p3np1/q2P4/2B5/2P5/P4PPP/2Q1R1K1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
     {"fen": "2k5/pp6/2p5/3n4/8/P7/1P6/K3R3 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r2q1rk1/1pp1bppp/p1np1n2/4p3/2B1P1b1/2P2N2/PP1P1PPP/RNBQR1K1 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "1r3rk1/pbp1qppp/1pnp1n2/8/2B1P3/1QP2N2/P4PPP/R1B1R1K1 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r1b1r1k1/pppq1ppp/2np1n2/2b1p3/2B1P3/2P2N1P/PP1P1PP1/RNBQR1K1 w - - 0 1", "moves_to_mate": 3},
+    {
+        "fen": "r2q1rk1/1pp1bppp/p1np1n2/4p3/2B1P1b1/2P2N2/PP1P1PPP/RNBQR1K1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "1r3rk1/pbp1qppp/1pnp1n2/8/2B1P3/1QP2N2/P4PPP/R1B1R1K1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r1b1r1k1/pppq1ppp/2np1n2/2b1p3/2B1P3/2P2N1P/PP1P1PP1/RNBQR1K1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
     {"fen": "4rrk1/ppp2ppp/2p5/8/4P3/8/PPP2PPP/R1B1R1K1 w - - 0 1", "moves_to_mate": 3},
     {"fen": "6k1/5ppp/8/8/R7/8/5PPP/6K1 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r1bqk2r/1p1nbppp/p2ppn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 1", "moves_to_mate": 3},
-    {"fen": "r1bqr1k1/1p1nbppp/p2ppn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 0 1", "moves_to_mate": 3},
-    {"fen": "r2q1rk1/pbpnbppp/1p1ppn2/8/2PP4/1P3NP1/P1Q1PPBP/RNB2RK1 w - - 0 1", "moves_to_mate": 3},
-
+    {
+        "fen": "r1bqk2r/1p1nbppp/p2ppn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w kq - 0 1",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r1bqr1k1/1p1nbppp/p2ppn2/8/3NP3/2N1B3/PPP1BPPP/R2Q1RK1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N2NP1/PP2PPBP/R1BQ1RK1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
+    {
+        "fen": "r2q1rk1/pbpnbppp/1p1ppn2/8/2PP4/1P3NP1/P1Q1PPBP/RNB2RK1 w - - 0 1",
+        "moves_to_mate": 3,
+    },
     # MATE IN 4
     {"fen": "8/4Rp2/1p2r1pk/p2Q4/P4p2/1P3P1q/5P1P/6K1 w - - 1 37", "moves_to_mate": 4},
-    {"fen": "r1b2rk1/pp3pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13", "moves_to_mate": 4},
-    {"fen": "3r1rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15", "moves_to_mate": 4},
-    {"fen": "r4rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15", "moves_to_mate": 4},
-    {"fen": "r2q1rk1/pp1b1pbp/3p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13", "moves_to_mate": 4},
-    {"fen": "3rr1k1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16", "moves_to_mate": 4},
-    {"fen": "2krr3/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16", "moves_to_mate": 4},
-    {"fen": "r4rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P2N2/P4PPP/RN1QR1K1 w - - 0 14", "moves_to_mate": 4},
-    {"fen": "r2q1rk1/pp1b1pbp/3p1np1/2pP4/2B2B2/2P2N2/P4PPP/RN1QR1K1 w - - 0 13", "moves_to_mate": 4},
-    {"fen": "3r1rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P2N2/P4PPP/RN1QR1K1 w - - 0 15", "moves_to_mate": 4},
+    {
+        "fen": "r1b2rk1/pp3pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "3r1rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r4rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r2q1rk1/pp1b1pbp/3p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "3rr1k1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "2krr3/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r4rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P2N2/P4PPP/RN1QR1K1 w - - 0 14",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r2q1rk1/pp1b1pbp/3p1np1/2pP4/2B2B2/2P2N2/P4PPP/RN1QR1K1 w - - 0 13",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "3r1rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P2N2/P4PPP/RN1QR1K1 w - - 0 15",
+        "moves_to_mate": 4,
+    },
     {"fen": "6k1/4pppp/8/8/8/8/4PPPP/R5K1 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r3k2r/ppp2ppp/2n5/3p4/8/2N5/PPP2PPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
-    {"fen": "r3k2r/ppp1nppp/8/3p4/8/2N5/PPP1NPPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
+    {
+        "fen": "r3k2r/ppp2ppp/2n5/3p4/8/2N5/PPP2PPP/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r3k2r/ppp1nppp/8/3p4/8/2N5/PPP1NPPP/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
     {"fen": "6k1/5ppp/8/8/8/8/5PPP/R1Q4K w - - 0 1", "moves_to_mate": 4},
     {"fen": "r3k2r/ppp2ppp/8/3p4/8/8/PPP1BPPP/R2QK2R w KQkq - 0 1", "moves_to_mate": 4},
     {"fen": "6k1/5ppp/8/8/8/8/5PPP/R4QK1 w - - 0 1", "moves_to_mate": 4},
@@ -236,29 +411,86 @@ puzzles_list = [
     {"fen": "8/4Rp2/1p2r1pk/p2Q4/P4p2/1P3P1q/5P1P/6K1 w - - 1 37", "moves_to_mate": 4},
     {"fen": "5rk1/6pp/8/8/8/8/6PP/R5QK w - - 0 1", "moves_to_mate": 4},
     {"fen": "6k1/5pp1/6p1/8/8/8/5PPP/R5QK w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r1b2rk1/pp3pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13", "moves_to_mate": 4},
-    {"fen": "3r1rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15", "moves_to_mate": 4},
+    {
+        "fen": "r1b2rk1/pp3pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "3r1rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15",
+        "moves_to_mate": 4,
+    },
     {"fen": "6k1/5pp1/6p1/8/8/8/5PPP/Q6K w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r4rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15", "moves_to_mate": 4},
+    {
+        "fen": "r4rk1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 15",
+        "moves_to_mate": 4,
+    },
     {"fen": "6k1/5pp1/6p1/8/8/6N1/5PPP/7K w - - 0 1", "moves_to_mate": 4},
     {"fen": "r6k/6pp/8/8/8/6N1/6PP/7K w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r2q1rk1/pp1b1pbp/3p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13", "moves_to_mate": 4},
-    {"fen": "6k1/5pp1/6p1/8/8/5B2/5PPP/7K w - - 0 1", "moves_to_mate": 4,},
-    {"fen": "3rr1k1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16", "moves_to_mate": 4},
+    {
+        "fen": "r2q1rk1/pp1b1pbp/3p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 13",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "6k1/5pp1/6p1/8/8/5B2/5PPP/7K w - - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "3rr1k1/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16",
+        "moves_to_mate": 4,
+    },
     {"fen": "7k/6pp/8/8/8/8/6PP/R5RK w - - 0 1", "moves_to_mate": 4},
     {"fen": "6k1/5P1p/8/8/8/8/6PP/6RK w - - 0 1", "moves_to_mate": 4},
-    {"fen": "2krr3/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16", "moves_to_mate": 4},
+    {
+        "fen": "2krr3/pp1b1pbp/1q1p1np1/2pP4/2B2B2/2P5/P4PPP/RN1QR1K1 w - - 0 16",
+        "moves_to_mate": 4,
+    },
     {"fen": "8/8/8/8/8/5k2/5p2/5K2 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r1b2rk1/p1q2ppp/2p5/2bp4/8/3B4/PPP2PPP/R1BQR1K1 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r4rk1/pp1b1ppp/1q2p3/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r1b1r1k1/pp3ppp/1q6/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r2q1rk1/pb2bppp/1p2p3/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "3rr1k1/pp1b1ppp/1q6/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "2krr3/pp1b1ppp/1q6/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1", "moves_to_mate": 4},
-    {"fen": "r1b1kb1r/p1ppqppp/2p2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
-    {"fen": "r1b1k2r/ppp2ppp/2p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
-    {"fen": "r1b1k2r/pppn1ppp/3p1n2/2b1p3/4P3/2N2N1P/PPPP1PP1/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
-    {"fen": "r2k3r/ppp2ppp/2p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
-    {"fen": "1r1qk2r/pbp2ppp/2p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
-    {"fen": "r1b1k2r/1pp2ppp/p1p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1", "moves_to_mate": 4},
+    {
+        "fen": "r1b2rk1/p1q2ppp/2p5/2bp4/8/3B4/PPP2PPP/R1BQR1K1 w - - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r4rk1/pp1b1ppp/1q2p3/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r1b1r1k1/pp3ppp/1q6/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r2q1rk1/pb2bppp/1p2p3/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "3rr1k1/pp1b1ppp/1q6/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "2krr3/pp1b1ppp/1q6/2np4/3N4/2P1B3/PP2BPPP/R2Q1RK1 w - - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r1b1kb1r/p1ppqppp/2p2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r1b1k2r/ppp2ppp/2p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r1b1k2r/pppn1ppp/3p1n2/2b1p3/4P3/2N2N1P/PPPP1PP1/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r2k3r/ppp2ppp/2p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "1r1qk2r/pbp2ppp/2p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
+    {
+        "fen": "r1b1k2r/1pp2ppp/p1p5/2b1p3/4P1n1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 1",
+        "moves_to_mate": 4,
+    },
 ]
